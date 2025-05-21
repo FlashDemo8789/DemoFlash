@@ -1,0 +1,13 @@
+{
+    "startup_id": "TEST1",
+    "startup_name": "Example Startup",
+    "team_size": 8,
+    "burn_rate_monthly": 40000,
+    "revenue_monthly": 25000,
+    "cash_on_hand": 500000,
+    "funding_stage": "Seed",
+    "industry": "Fintech",
+    "country": "USA",
+    "founding_year": 2023,
+    "technical_team_size": 5
+} 

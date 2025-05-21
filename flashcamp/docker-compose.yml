@@ -1,0 +1,89 @@
+version: '3.8'
+
+x-platform: &platform-config
+  platform: linux/amd64
+
+networks:
+  flashcamp-network:
+    driver: bridge
+
+volumes:
+  grafana_data:
+
+services:
+  # ───────── backend ─────────
+  backend:
+    <<: *platform-config
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+    environment:
+      - ENVIRONMENT=development
+      - LOG_LEVEL=info
+      - CORS_ORIGINS=http://localhost:3000
+      - DATABASE_URL=sqlite:///./flashdna.db
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models           # hot-swap updated models
+      - ./reports:/app/reports
+      - ./logs:/app/logs
+      - ./migrations:/app/migrations
+      - ./alembic.ini:/app/alembic.ini
+      - ./backend:/app/backend         # live-reload code
+      - ./app.py:/app/app.py           # '' 
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - flashcamp-network
+
+  # ───────── frontend ─────────
+  frontend:
+    <<: *platform-config
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    ports:
+      - "3000:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - flashcamp-network
+
+  # ───────── monitoring ─────────
+  prometheus:
+    <<: *platform-config
+    image: prom/prometheus:v2.52.0
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - flashcamp-network
+
+  grafana:
+    <<: *platform-config
+    image: grafana/grafana-oss:10.4.2
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_DISABLE_INITIAL_ADMIN_PASSWORD=true
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/dashboards:/etc/grafana/provisioning/dashboards
+      - ./monitoring/datasources:/etc/grafana/provisioning/datasources
+    depends_on:
+      - prometheus
+    networks:
+      - flashcamp-network

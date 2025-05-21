@@ -1,0 +1,625 @@
+[
+  {
+    "key": "startup_name",
+    "label": "Startup Name",
+    "type": "text",
+    "default": "",
+    "pillar": "Info"
+  },
+  {
+    "key": "startup_id",
+    "label": "Startup Id",
+    "type": "text",
+    "default": "",
+    "pillar": "Info"
+  },
+  {
+    "key": "sector",
+    "label": "Sector",
+    "type": "text",
+    "default": "",
+    "pillar": "Info"
+  },
+  {
+    "key": "subsector",
+    "label": "Subsector",
+    "type": "text",
+    "default": "",
+    "pillar": "Info"
+  },
+  {
+    "key": "market_geography",
+    "label": "Market Geography",
+    "type": "list",
+    "default": [],
+    "pillar": "Market"
+  },
+  {
+    "key": "country",
+    "label": "Country",
+    "type": "text",
+    "default": "",
+    "pillar": "Market"
+  },
+  {
+    "key": "website",
+    "label": "Website",
+    "type": "text",
+    "default": "",
+    "pillar": "Info"
+  },
+  {
+    "key": "founding_year",
+    "label": "Founding Year",
+    "type": "number",
+    "default": 2022,
+    "pillar": "People"
+  },
+  {
+    "key": "funding_stage",
+    "label": "Funding Stage",
+    "type": "text",
+    "default": "Seed",
+    "pillar": "Capital"
+  },
+  {
+    "key": "has_data_moat",
+    "label": "Has Data Moat",
+    "type": "checkbox",
+    "default": false,
+    "pillar": "Advantage"
+  },
+  {
+    "key": "prior_startup_experience_count",
+    "label": "Prior Startup Experience Count",
+    "type": "number",
+    "default": 0,
+    "pillar": "People"
+  },
+  {
+    "key": "runway_months",
+    "label": "Runway (Months)",
+    "type": "number",
+    "default": 12,
+    "pillar": "Capital"
+  },
+  {
+    "key": "tam_size_usd",
+    "label": "TAM Size (USD)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Market"
+  },
+  {
+    "key": "regulatory_risk_score",
+    "label": "Regulatory Risk Score",
+    "type": "number",
+    "default": 5,
+    "pillar": "Market"
+  },
+  {
+    "key": "market_growth_rate_percent",
+    "label": "Market Growth Rate (%)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Market"
+  },
+  {
+    "key": "conversion_rate_percent",
+    "label": "Conversion Rate (%)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Market"
+  },
+  {
+    "key": "board_advisor_experience_score",
+    "label": "Board Advisor Experience Score",
+    "type": "number",
+    "default": 0,
+    "pillar": "People"
+  },
+  {
+    "key": "tech_differentiation_score",
+    "label": "Tech Differentiation Score",
+    "type": "number",
+    "default": 0,
+    "pillar": "Advantage"
+  },
+  {
+    "key": "regulatory_advantage_present",
+    "label": "Regulatory Advantage Present",
+    "type": "checkbox",
+    "default": false,
+    "pillar": "Advantage"
+  },
+  {
+    "key": "scalability_score",
+    "label": "Scalability Score",
+    "type": "number",
+    "default": 0,
+    "pillar": "Advantage"
+  },
+  {
+    "key": "cac_payback_months",
+    "label": "CAC Payback (Months)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Capital"
+  },
+  {
+    "key": "viral_coefficient",
+    "label": "Viral Coefficient",
+    "type": "number",
+    "default": 0,
+    "pillar": "Advantage"
+  },
+  {
+    "key": "cash_on_hand_usd",
+    "label": "Cash on Hand (USD)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Capital"
+  },
+  {
+    "key": "brand_strength_score",
+    "label": "Brand Strength Score",
+    "type": "number",
+    "default": 0,
+    "pillar": "Advantage"
+  },
+  {
+    "key": "distribution_partner_count",
+    "label": "Distribution Partner Count",
+    "type": "number",
+    "default": 0,
+    "pillar": "Market"
+  },
+  {
+    "key": "ltv_cac_ratio",
+    "label": "LTV/CAC Ratio",
+    "type": "number",
+    "default": 0,
+    "pillar": "Capital"
+  },
+  {
+    "key": "sales_cycle_length_days",
+    "label": "Sales Cycle (Days)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Capital"
+  },
+  {
+    "key": "team_size_total",
+    "label": "Team Size (Total)",
+    "type": "number",
+    "default": 0,
+    "pillar": "People"
+  },
+  {
+    "key": "has_debt",
+    "label": "Has Debt",
+    "type": "checkbox",
+    "default": false,
+    "pillar": "Capital"
+  },
+  {
+    "key": "debt_ratio",
+    "label": "Debt Ratio",
+    "type": "number",
+    "default": 0,
+    "pillar": "Capital"
+  },
+  {
+    "key": "team_diversity_percent",
+    "label": "Team Diversity (%)",
+    "type": "number",
+    "default": 0,
+    "pillar": "People"
+  },
+  {
+    "key": "current_mrr",
+    "label": "Current MRR",
+    "type": "number",
+    "default": 0,
+    "pillar": "Capital"
+  },
+  {
+    "key": "team_engagement_score",
+    "label": "Team Engagement Score",
+    "type": "number",
+    "default": 0,
+    "pillar": "People"
+  },
+  {
+    "key": "customer_churn_rate_percent",
+    "label": "Customer Churn Rate (%)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Capital"
+  },
+  {
+    "key": "net_profit_margin_percent",
+    "label": "Net Profit Margin (%)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Capital"
+  },
+  {
+    "key": "gross_margin_percent",
+    "label": "Gross Margin (%)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Capital"
+  },
+  {
+    "key": "sam_size_usd",
+    "label": "SAM Size (USD)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Market"
+  },
+  {
+    "key": "product_stage",
+    "label": "Product Stage",
+    "type": "text",
+    "default": "",
+    "pillar": "Advantage"
+  },
+  {
+    "key": "burn_multiple",
+    "label": "Burn Multiple",
+    "type": "number",
+    "default": 0,
+    "pillar": "Capital"
+  },
+  {
+    "key": "data_source",
+    "label": "Data Source",
+    "type": "text",
+    "default": "",
+    "pillar": "Info"
+  },
+  {
+    "key": "user_growth_rate_percent",
+    "label": "User Growth Rate (%)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Market"
+  },
+  {
+    "key": "nps_score",
+    "label": "NPS Score",
+    "type": "number",
+    "default": 0,
+    "pillar": "Market"
+  },
+  {
+    "key": "complementary_skills_index",
+    "label": "Complementary Skills Index",
+    "type": "number",
+    "default": 0,
+    "pillar": "People"
+  },
+  {
+    "key": "revenue_growth_rate",
+    "label": "Revenue Growth Rate",
+    "type": "number",
+    "default": 0,
+    "pillar": "Capital"
+  },
+  {
+    "key": "employee_turnover_rate_percent",
+    "label": "Employee Turnover Rate (%)",
+    "type": "number",
+    "default": 0,
+    "pillar": "People"
+  },
+  {
+    "key": "competition_intensity",
+    "label": "Competition Intensity",
+    "type": "number",
+    "default": 5,
+    "pillar": "Market"
+  },
+  {
+    "key": "market_adoption_stage",
+    "label": "Market Adoption Stage",
+    "type": "text",
+    "default": "",
+    "pillar": "Market"
+  },
+  {
+    "key": "switching_cost_score",
+    "label": "Switching Cost Score",
+    "type": "number",
+    "default": 0,
+    "pillar": "Advantage"
+  },
+  {
+    "key": "key_person_dependency",
+    "label": "Key Person Dependency",
+    "type": "number",
+    "default": 0,
+    "pillar": "Advantage"
+  },
+  {
+    "key": "patent_count",
+    "label": "Patent Count",
+    "type": "number",
+    "default": 0,
+    "pillar": "Advantage"
+  },
+  {
+    "key": "product_uptime_percent",
+    "label": "Product Uptime (%)",
+    "type": "number",
+    "default": 99.9,
+    "pillar": "Advantage"
+  },
+  {
+    "key": "security_compliance",
+    "label": "Security Compliance",
+    "type": "text",
+    "default": "",
+    "pillar": "Advantage"
+  },
+  {
+    "key": "customer_concentration_percent",
+    "label": "Customer Concentration (%)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Capital"
+  },
+  {
+    "key": "success_label",
+    "label": "Success Label",
+    "type": "checkbox",
+    "default": false,
+    "pillar": "Info"
+  },
+  {
+    "key": "burn_rate_usd",
+    "label": "Burn Rate (USD)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Capital"
+  },
+  {
+    "key": "waitlist_size",
+    "label": "Waitlist Size",
+    "type": "number",
+    "default": 0,
+    "pillar": "Market"
+  },
+  {
+    "key": "has_network_effect",
+    "label": "Has Network Effect",
+    "type": "checkbox",
+    "default": false,
+    "pillar": "Advantage"
+  },
+  {
+    "key": "switching_cost",
+    "label": "Switching Cost",
+    "type": "text",
+    "default": "",
+    "pillar": "Advantage"
+  },
+  {
+    "key": "product_retention_30d",
+    "label": "30-Day Retention (%)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Market"
+  },
+  {
+    "key": "product_retention_90d",
+    "label": "90-Day Retention (%)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Market"
+  },
+  {
+    "key": "mau",
+    "label": "Monthly Active Users",
+    "type": "number",
+    "default": 0,
+    "pillar": "Market"
+  },
+  {
+    "key": "moat_barriers",
+    "label": "Moat Barriers",
+    "type": "list",
+    "default": [],
+    "pillar": "Advantage"
+  },
+  {
+    "key": "linkedin_connections_total",
+    "label": "LinkedIn Connections",
+    "type": "number",
+    "default": 0,
+    "pillar": "People"
+  },
+  {
+    "key": "twitter_followers_total",
+    "label": "Twitter Followers",
+    "type": "number",
+    "default": 0,
+    "pillar": "People"
+  },
+  {
+    "key": "domain_expertise_years_avg",
+    "label": "Domain Expertise (Years)",
+    "type": "number",
+    "default": 0,
+    "pillar": "People"
+  },
+  {
+    "key": "gender_diversity_index",
+    "label": "Gender Diversity Index",
+    "type": "number",
+    "default": 0,
+    "pillar": "People"
+  },
+  {
+    "key": "geography_diversity_index",
+    "label": "Geography Diversity Index",
+    "type": "number",
+    "default": 0,
+    "pillar": "People"
+  },
+  {
+    "key": "founders_count",
+    "label": "Founders Count",
+    "type": "number",
+    "default": 1,
+    "pillar": "People"
+  },
+  {
+    "key": "previous_exits_count",
+    "label": "Previous Exits Count",
+    "type": "number",
+    "default": 0,
+    "pillar": "People"
+  },
+  {
+    "key": "has_patents",
+    "label": "Has Patents",
+    "type": "checkbox",
+    "default": false,
+    "pillar": "Advantage"
+  },
+  {
+    "key": "total_funding_usd",
+    "label": "Total Funding (USD)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Capital"
+  },
+  {
+    "key": "revenue_annual_usd",
+    "label": "Annual Revenue (USD)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Capital"
+  },
+  {
+    "key": "ltv_usd",
+    "label": "Lifetime Value (USD)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Capital"
+  },
+  {
+    "key": "regulation_flags",
+    "label": "Regulation Flags",
+    "type": "list",
+    "default": [],
+    "pillar": "Market"
+  },
+  {
+    "key": "top3_competitor_share_pct",
+    "label": "Top-3 Competitor Share (%)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Market"
+  },
+  {
+    "key": "roles_present",
+    "label": "Roles Present",
+    "type": "list",
+    "default": [],
+    "pillar": "People"
+  },
+  {
+    "key": "competitors_named_count",
+    "label": "Competitors Named Count",
+    "type": "number",
+    "default": 0,
+    "pillar": "Market"
+  },
+  {
+    "key": "tam_justification",
+    "label": "TAM Justification",
+    "type": "text",
+    "default": "",
+    "pillar": "Market"
+  },
+  {
+    "key": "industry_regulation_level",
+    "label": "Industry Regulation Level",
+    "type": "text",
+    "default": "",
+    "pillar": "Market"
+  },
+  {
+    "key": "claimed_tam_usd",
+    "label": "Claimed TAM (USD)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Market"
+  },
+  {
+    "key": "claimed_cagr_pct",
+    "label": "Claimed CAGR (%)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Market"
+  },
+  {
+    "key": "burn_stddev_usd",
+    "label": "Burn StdDev (USD)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Capital"
+  },
+  {
+    "key": "funding_rounds_count",
+    "label": "Funding Rounds Count",
+    "type": "number",
+    "default": 0,
+    "pillar": "Capital"
+  },
+  {
+    "key": "committed_funding_usd",
+    "label": "Committed Funding (USD)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Capital"
+  },
+  {
+    "key": "years_experience_avg",
+    "label": "Avg Years Experience",
+    "type": "number",
+    "default": 0,
+    "pillar": "People"
+  },
+  {
+    "key": "team_size_full_time",
+    "label": "Team Size (Full-Time)",
+    "type": "number",
+    "default": 0,
+    "pillar": "People"
+  },
+  {
+    "key": "degree_level_mode",
+    "label": "Degree Level Mode",
+    "type": "text",
+    "default": "",
+    "pillar": "People"
+  },
+  {
+    "key": "cac_usd",
+    "label": "CAC (USD)",
+    "type": "number",
+    "default": 0,
+    "pillar": "Capital"
+  },
+  {
+    "key": "previous_exit_max_value_usd",
+    "label": "Prev Exit Max Value (USD)",
+    "type": "number",
+    "default": 0,
+    "pillar": "People"
+  }
+]

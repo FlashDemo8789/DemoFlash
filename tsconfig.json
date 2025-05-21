@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "baseUrl": "./src",
+    "paths": { "@/*": ["*"] }
+  }
+} 

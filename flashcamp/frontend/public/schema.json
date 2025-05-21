@@ -1,0 +1,461 @@
+{
+  "startup_id": {
+    "type": "string",
+    "required": true,
+    "description": "Stable UUID for row joins"
+  },
+  "startup_name": {
+    "type": "string",
+    "required": true,
+    "description": "Display name"
+  },
+  "sector": {
+    "type": "string",
+    "required": true,
+    "description": "Mid-level taxonomy (e.g. Fintech, Healthtech)"
+  },
+  "subsector": {
+    "type": "string",
+    "required": true,
+    "description": "Finer vertical (e.g. Lending within Fintech)"
+  },
+  "industry": {
+    "type": "string",
+    "description": "High-level industry bucket"
+  },
+  "market_geography": {
+    "type": "string",
+    "required": true,
+    "description": "Regions served (Africa, Global, LATAM, etc.)"
+  },
+  "funding_stage": {
+    "type": "string",
+    "required": true,
+    "description": "Seed, Series A, Series B \u2026"
+  },
+  "country": {
+    "type": "string",
+    "required": true,
+    "description": "HQ country (ISO-3)"
+  },
+  "website": {
+    "type": "string",
+    "required": true,
+    "description": "Primary URL"
+  },
+  "founding_year": {
+    "type": "integer",
+    "required": true,
+    "description": "Year the startup was founded (YYYY)"
+  },
+  "total_capital_raised_usd": {
+    "type": "number",
+    "required": true,
+    "description": "All equity + debt raised to-date"
+  },
+  "funding_rounds_count": {
+    "type": "number",
+    "required": true,
+    "description": "Total investment rounds"
+  },
+  "round_valuation_usd": {
+    "type": "number",
+    "required": true,
+    "description": "Pre-money valuation of latest round"
+  },
+  "post_money_valuation_usd": {
+    "type": "number",
+    "required": true,
+    "description": "Post-money valuation after latest round"
+  },
+  "committed_funding_usd": {
+    "type": "number",
+    "required": true,
+    "description": "Signed but not wired yet"
+  },
+  "team_size_full_time": {
+    "type": "number",
+    "required": true,
+    "description": "Full-time employees"
+  },
+  "team_size_total": {
+    "type": "number",
+    "required": true,
+    "description": "Total team size including contractors"
+  },
+  "technical_team_size": {
+    "type": "integer",
+    "description": "Engineers / technical staff"
+  },
+  "founding_team_size": {
+    "type": "integer",
+    "description": "Founders only"
+  },
+  "team_diversity_percent": {
+    "type": "number",
+    "required": true,
+    "description": "% of team \u2194 majority demographic"
+  },
+  "employee_turnover_rate_percent": {
+    "type": "number",
+    "description": "Trailing 12M attrition %"
+  },
+  "team_engagement_score": {
+    "type": "number",
+    "description": "Pulse survey (0-10)"
+  },
+  "key_person_dependency": {
+    "type": "boolean",
+    "required": true,
+    "description": "High dependency on key person?"
+  },
+  "complementary_skills_index": {
+    "type": "number",
+    "description": "0-1 balance between biz/tech/design"
+  },
+  "monthly_burn_usd": {
+    "type": "number",
+    "required": true,
+    "description": "Cash expenses / month"
+  },
+  "revenue_monthly_usd": {
+    "type": "number",
+    "required": true,
+    "description": "Booked MRR"
+  },
+  "cash_on_hand_usd": {
+    "type": "number",
+    "required": true,
+    "description": "Bank balance + equivalents"
+  },
+  "runway_months": {
+    "type": "integer",
+    "required": true,
+    "description": "cash / burn (mo)"
+  },
+  "burn_multiple": {
+    "type": "number",
+    "description": "Net burn / net new ARR"
+  },
+  "burn_stddev_usd": {
+    "type": "number",
+    "required": true,
+    "description": "Standard deviation of monthly burn"
+  },
+  "gross_margin_percent": {
+    "type": "number",
+    "required": true,
+    "description": "Trailing 12M gross margin %"
+  },
+  "net_profit_margin_percent": {
+    "type": "number",
+    "description": "Trailing 12M net margin %"
+  },
+  "annual_revenue_run_rate": {
+    "type": "number",
+    "required": true,
+    "description": "Annual revenue run rate (MRR \u00d7 12)"
+  },
+  "revenue_growth_rate_percent": {
+    "type": "number",
+    "required": true,
+    "description": "YoY growth rate in percent"
+  },
+  "market_growth_rate_percent": {
+    "type": "number",
+    "required": true,
+    "description": "CAGR of addressable market %"
+  },
+  "tam_size_usd": {
+    "type": "number",
+    "required": true,
+    "description": "Total Addressable Market"
+  },
+  "sam_size_usd": {
+    "type": "number",
+    "required": true,
+    "description": "Serviceable Available Market"
+  },
+  "claimed_tam_usd": {
+    "type": "number",
+    "description": "Founder claim"
+  },
+  "claimed_cagr_pct": {
+    "type": "number",
+    "required": true,
+    "description": "Founder-stated CAGR %"
+  },
+  "tam_justification": {
+    "type": "string",
+    "required": true,
+    "description": "Narrative source for TAM"
+  },
+  "market_adoption_stage": {
+    "type": "string",
+    "description": "Tech adoption curve phase"
+  },
+  "competition_intensity": {
+    "type": "number",
+    "required": true,
+    "description": "1-5 scale of competition intensity"
+  },
+  "competitors_named_count": {
+    "type": "number",
+    "required": true,
+    "description": "# direct competitors named"
+  },
+  "top3_competitor_share_pct": {
+    "type": "number",
+    "required": true,
+    "description": "% share of top 3 incumbents"
+  },
+  "nps_score": {
+    "type": "number",
+    "required": true,
+    "description": "Net Promoter Score (-100 \u2013 100)"
+  },
+  "waitlist_size": {
+    "type": "number",
+    "description": "# users on wait-list"
+  },
+  "mau": {
+    "type": "number",
+    "required": true,
+    "description": "Monthly active users"
+  },
+  "ltv_cac_ratio": {
+    "type": "number",
+    "required": true,
+    "description": "Lifetime value / CAC"
+  },
+  "customer_churn_rate_percent": {
+    "type": "number",
+    "required": true,
+    "description": "Monthly logo churn %"
+  },
+  "cac_payback_months": {
+    "type": "number",
+    "description": "Months to recover CAC"
+  },
+  "ltv_usd": {
+    "type": "number",
+    "description": "Estimated LTV (USD)"
+  },
+  "cac_usd": {
+    "type": "number",
+    "required": true,
+    "description": "Cost to acquire customer"
+  },
+  "customer_concentration_percent": {
+    "type": "number",
+    "required": true,
+    "description": "% revenue from top 5 customers"
+  },
+  "product_retention_30d": {
+    "type": "number",
+    "required": true,
+    "description": "30-day retention %"
+  },
+  "product_retention_90d": {
+    "type": "number",
+    "required": true,
+    "description": "90-day retention %"
+  },
+  "conversion_rate_percent": {
+    "type": "number",
+    "required": true,
+    "description": "Visitor \u2192 customer %"
+  },
+  "user_growth_rate_percent": {
+    "type": "number",
+    "required": true,
+    "description": "MoM active-user growth %"
+  },
+  "patent_count": {
+    "type": "number",
+    "required": true,
+    "description": "# granted patents"
+  },
+  "has_patents": {
+    "type": "boolean",
+    "description": "Any patents?"
+  },
+  "has_data_moat": {
+    "type": "boolean",
+    "required": true,
+    "description": "Proprietary data advantage?"
+  },
+  "tech_differentiation_score": {
+    "type": "number",
+    "required": true,
+    "description": "0-5 unique tech moat"
+  },
+  "regulatory_advantage_present": {
+    "type": "boolean",
+    "required": true,
+    "description": "Licence or exclusive approval?"
+  },
+  "network_effects_present": {
+    "type": "boolean",
+    "required": true,
+    "description": "Self-reinforcing usage loops?"
+  },
+  "has_network_effect": {
+    "type": "boolean",
+    "description": "Binary alias (UI convenience)"
+  },
+  "switching_cost_score": {
+    "type": "number",
+    "required": true,
+    "description": "0-5 perceived switching cost"
+  },
+  "switching_cost": {
+    "type": "string",
+    "description": "Narrative of switching cost"
+  },
+  "product_stage": {
+    "type": "string",
+    "required": true,
+    "description": "Concept, Beta, GA, etc."
+  },
+  "product_uptime_percent": {
+    "type": "number",
+    "description": "Last 90d uptime %"
+  },
+  "security_compliance": {
+    "type": "array",
+    "description": "e.g. SOC2, ISO27001"
+  },
+  "moat_barriers": {
+    "type": "array",
+    "description": "Moat barrier labels"
+  },
+  "founder_domain_experience_years": {
+    "type": "number",
+    "required": true,
+    "description": "Years of domain experience"
+  },
+  "prior_startup_experience_count": {
+    "type": "number",
+    "required": true,
+    "description": "# previous startups founded"
+  },
+  "prior_successful_exits_count": {
+    "type": "number",
+    "required": true,
+    "description": "# exits > $0 for founders"
+  },
+  "previous_exit_max_value_usd": {
+    "type": "number",
+    "description": "Largest exit value"
+  },
+  "previous_exits_count": {
+    "type": "number",
+    "description": "Total exits"
+  },
+  "board_advisor_experience_score": {
+    "type": "number",
+    "required": true,
+    "description": "0-5 strength of advisory board"
+  },
+  "founders_count": {
+    "type": "number",
+    "required": true,
+    "description": "Number of founders"
+  },
+  "years_experience_avg": {
+    "type": "number",
+    "description": "Average yrs prof. experience"
+  },
+  "degree_level_mode": {
+    "type": "string",
+    "description": "Most common degree level"
+  },
+  "roles_present": {
+    "type": "array",
+    "description": "e.g. CEO/CTO/CFO"
+  },
+  "gender_diversity_index": {
+    "type": "number",
+    "required": true,
+    "description": "0 (no diversity) \u2013 1 (equal)"
+  },
+  "geography_diversity_index": {
+    "type": "number",
+    "required": true,
+    "description": "0-1 diversity across regions"
+  },
+  "linkedin_connections_total": {
+    "type": "number",
+    "required": true,
+    "description": "Sum over all employees"
+  },
+  "twitter_followers_total": {
+    "type": "number",
+    "required": true,
+    "description": "Company + execs followers"
+  },
+  "debt_ratio": {
+    "type": "number",
+    "description": "Liabilities / assets (0-1)"
+  },
+  "has_debt": {
+    "type": "boolean",
+    "required": true,
+    "description": "Any outstanding debt?"
+  },
+  "sales_cycle_length_days": {
+    "type": "number",
+    "description": "Lead \u2192 close time"
+  },
+  "scalability_score": {
+    "type": "number",
+    "required": true,
+    "description": "0-5 infra / ops scalability"
+  },
+  "distribution_partner_count": {
+    "type": "number",
+    "description": "# active channel partners"
+  },
+  "brand_strength_score": {
+    "type": "number",
+    "required": true,
+    "description": "0-5 brand awareness"
+  },
+  "viral_coefficient": {
+    "type": "number",
+    "description": "k-factor"
+  },
+  "regulatory_risk_score": {
+    "type": "number",
+    "description": "0-10 risk from regulation"
+  },
+  "industry_regulation_level": {
+    "type": "number",
+    "required": true,
+    "description": "Level of regulation (0-3)"
+  },
+  "regulation_flags_json": {
+    "type": "string",
+    "required": true,
+    "description": "JSON string of regulation flags"
+  },
+  "website_health_score": {
+    "type": "number",
+    "description": "0-100 Lighthouse perf."
+  },
+  "data_source": {
+    "type": "string",
+    "description": "CSV / CRM / manual / API"
+  },
+  "investor_tier_primary": {
+    "type": "string",
+    "required": true,
+    "description": "Tier of primary investor (Tier1, Tier2, Angel, etc.)"
+  },
+  "success_label": {
+    "type": "string",
+    "required": true,
+    "description": "Ground-truth for training ('pass' or 'fail')"
+  }
+}

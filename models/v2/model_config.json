@@ -1,0 +1,105 @@
+{
+  "pillars": [
+    "capital",
+    "advantage",
+    "market",
+    "people"
+  ],
+  "thresholds": {
+    "meta": 0.3040880858898163,
+    "balanced": 0.33681437373161316
+  },
+  "feature_columns": [
+    "log_cash_on_hand",
+    "ltv_cac_ratio",
+    "burn_multiple",
+    "runway_est",
+    "gross_margin",
+    "customer_concentration",
+    "post_money_valuation",
+    "patent_count_norm",
+    "network_effect",
+    "has_data_moat",
+    "reg_advantage",
+    "tech_diff_score",
+    "switch_cost_score",
+    "brand_strength",
+    "retention_30d",
+    "retention_90d",
+    "nps_score_norm",
+    "tam_ratio",
+    "sam_ratio",
+    "cagr_pct",
+    "market_growth_pct",
+    "competition_intensity",
+    "competition_hhi",
+    "reg_level_idx",
+    "founders_count_norm",
+    "team_size_norm",
+    "domain_exp_avg",
+    "prior_exits",
+    "board_advisor_score",
+    "team_diversity",
+    "gender_div_idx",
+    "geo_div_idx",
+    "key_person_dependency",
+    "log_linkedin",
+    "log_twitter",
+    "advisors_count_norm",
+    "conversion_rate",
+    "user_growth_rate",
+    "customer_count_norm",
+    "scalability_score",
+    "net_dollar_retention",
+    "sector_FinTech",
+    "sector_HealthTech",
+    "sector_EdTech",
+    "sector_SaaS",
+    "sector_AI",
+    "sector_BioTech",
+    "sector_ClimateTech",
+    "sector_Gaming",
+    "sector_Robotics",
+    "sector_IoT",
+    "sector_Other",
+    "tam_method_Hybrid estimate",
+    "product_stage_Concept",
+    "product_stage_Beta",
+    "product_stage_GA",
+    "investor_tier_Unknown",
+    "investor_tier_Angel",
+    "investor_tier_Tier2",
+    "investor_tier_Tier1"
+  ],
+  "training_data": {
+    "path": "flashcamp/data/gold/seed_dataset_master_final_54000_68.csv",
+    "size": 54000,
+    "class_distribution": {
+      "fail": 39096,
+      "pass": 14904
+    }
+  },
+  "performance": {
+    "default": {
+      "accuracy": 0.7921481481481482,
+      "precision": 0.6798279906176701,
+      "recall": 0.46672034353193775,
+      "f1": 0.5534691279439847,
+      "threshold": 0.5
+    },
+    "optimal": {
+      "accuracy": 0.7853888888888889,
+      "precision": 0.6057686171909897,
+      "recall": 0.6369431025228127,
+      "f1": 0.6209648405560099,
+      "threshold": 0.3040880858898163
+    },
+    "balanced": {
+      "accuracy": 0.790037037037037,
+      "precision": 0.6195360686511129,
+      "recall": 0.6200348899624262,
+      "f1": 0.6197853789403085,
+      "threshold": 0.33681437373161316
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "meta_model": {
+    "accuracy": 0.62,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "auc": 1.0
+  },
+  "pillar_models": {
+    "capital": {
+      "accuracy": 0.9982,
+      "precision": 0.9978936282253817,
+      "recall": 0.9973684210526316,
+      "f1": 0.9976309555146091,
+      "auc": 0.9999790322580645
+    },
+    "advantage": {
+      "accuracy": 0.62,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "auc": 1.0
+    },
+    "market": {
+      "accuracy": 0.998,
+      "precision": 0.9984177215189873,
+      "recall": 0.9963157894736843,
+      "f1": 0.9973656480505796,
+      "auc": 0.9999857385398981
+    },
+    "people": {
+      "accuracy": 0.999,
+      "precision": 0.9989468141126909,
+      "recall": 0.998421052631579,
+      "f1": 0.9986838641747828,
+      "auc": 0.9999966044142615
+    }
+  },
+  "dataset": {
+    "path": "flashcamp/data/gold/seed_dataset_synthetic.csv",
+    "size": 5000,
+    "class_distribution": {
+      "fail": 3100,
+      "pass": 1900
+    }
+  }
+}

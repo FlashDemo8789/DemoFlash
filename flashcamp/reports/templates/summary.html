@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: sans-serif; padding: 2em; }
+    h1   { margin-bottom: 0; color: #333; }
+    h2   { margin-top: 1.5em; margin-bottom: 0.5em; border-bottom: 1px solid #ccc; padding-bottom: 0.2em; color: #555; }
+    table{ border-collapse: collapse; width: 100%; margin-bottom: 1.5em; }
+    th, td { padding: 8px 10px; border: 1px solid #ccc; text-align: left; }
+    th   { background-color: #f2f2f2; font-weight: bold; }
+    ul   { padding-left: 20px; }
+    li   { margin-bottom: 0.5em; color: #d9534f; }
+    .timestamp { color: #777; font-size: 0.9em; margin-bottom: 2em; }
+    .probability { font-size: 28px; font-weight: bold; color: #4f46e5; }
+  </style>
+</head>
+<body>
+  <h1>FlashCAMP Report – {{ startup_id }}</h1>
+  <p class="timestamp">Generated: {{ timestamp }}</p>
+
+  <h2>Pillar Scores</h2>
+  <table>
+    <tr><th>Pillar</th><th>Score</th></tr>
+    {% for k, v in pillars.items() %}
+    <tr><td>{{ k.title() }}</td><td>{{ v }}</td></tr>
+    {% endfor %}
+  </table>
+
+  <h2>Success Probability</h2>
+  <p class="probability">{{ (success_prob * 100) | round(1) }}%</p>
+
+  {% if alerts %}
+    <h2>Alerts</h2>
+    <ul>{% for a in alerts %}<li>{{ a }}</li>{% endfor %}</ul>
+  {% endif %}
+</body>
+</html>

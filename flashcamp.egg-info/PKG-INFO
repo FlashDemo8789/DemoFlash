@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: flashcamp
+Version: 0.1.0
+Summary: FlashCAMP – Startup DNA analysis platform
+Author-email: FlashDNA <dev@flashdna.io>
+Requires-Python: >=3.9

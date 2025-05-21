@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flashcamp"
+version = "0.1.0"
+description = "FlashCAMP startup-analysis platform"
+# Tells setuptools to find packages under the 'flashcamp' directory
+packages = ["flashcamp", "flashcamp.backend"] 
+# Add other subpackages if they exist, e.g., flashcamp.generators
+
+[tool.setuptools.packages.find]
+where = ["."]  # Look for packages in the current directory
+include = ["flashcamp*"] # Include the main flashcamp package and subpackages
+exclude = ["tests*"] # Exclude test directories from the package
+
+authors = [{ name = "FlashDNA", email = "dev@flashdna.io" }]
+requires-python = ">=3.9" 

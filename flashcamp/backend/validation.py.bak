@@ -1,0 +1,310 @@
+"""
+Enhanced validation module for FlashCAMP
+Provides additional validation beyond Pydantic's built-in validation
+"""
+from typing import Dict, Any, List, Tuple, Optional, Set, Union, TypeVar, Generic
+import re
+from pydantic import BaseModel, ValidationError, field_validator
+import logging
+from decimal import Decimal, InvalidOperation
+import json
+import html
+
+logger = logging.getLogger(__name__)
+
+# Common validation patterns
+EMAIL_PATTERN = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+URL_PATTERN = r'^(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$'
+NUMERIC_PATTERN = r'^-?\d+(\.\d+)?$'
+
+# Type for generics
+T = TypeVar('T')
+
+class ValidationResult(Generic[T]):
+    """Result of a validation operation with optional validated data"""
+    def __init__(self, valid: bool, data: Optional[T] = None, errors: Optional[List[Dict[str, Any]]] = None):
+        self.valid = valid
+        self.data = data
+        self.errors = errors or []
+    
+    def add_error(self, field: str, message: str, error_type: str = "validation"):
+        """Add an error to the result"""
+        self.errors.append({
+            "field": field,
+            "message": message,
+            "type": error_type
+        })
+        self.valid = False
+    
+    def __bool__(self) -> bool:
+        """Allow using the result in boolean context"""
+        return self.valid
+
+def validate_email(email: str) -> bool:
+    """Validate an email address format"""
+    if not email:
+        return False
+    return bool(re.match(EMAIL_PATTERN, email))
+
+def validate_url(url: str) -> bool:
+    """Validate a URL format"""
+    if not url:
+        return False
+    return bool(re.match(URL_PATTERN, url))
+
+def validate_range(value: Union[float, int, Decimal], min_value: float, max_value: float) -> bool:
+    """Validate that a value is within a specified range"""
+    try:
+        # Convert to float for comparison
+        float_value = float(value)
+        return min_value <= float_value <= max_value
+    except (ValueError, TypeError, InvalidOperation):
+        return False
+
+def validate_numeric(value: Any) -> bool:
+    """Validate that a value is numeric"""
+    if isinstance(value, (int, float, Decimal)):
+        return True
+    if isinstance(value, str):
+        return bool(re.match(NUMERIC_PATTERN, value.strip()))
+    return False
+
+def safe_convert_numeric(value: Any) -> Optional[float]:
+    """Safely convert a value to a float, or return None if invalid"""
+    if value is None:
+        return None
+    
+    try:
+        if isinstance(value, str):
+            value = value.strip()
+            if not value:
+                return None
+        return float(value)
+    except (ValueError, TypeError, InvalidOperation):
+        return None
+
+def validate_required_fields(data: Dict[str, Any], required_fields: List[str]) -> ValidationResult:
+    """Validate that all required fields are present and have values"""
+    result = ValidationResult(valid=True, data=data)
+    
+    for field in required_fields:
+        if field not in data:
+            result.add_error(field, f"Field '{field}' is required but missing")
+        elif data[field] is None:
+            result.add_error(field, f"Field '{field}' cannot be null")
+        elif isinstance(data[field], str) and not data[field].strip():
+            result.add_error(field, f"Field '{field}' cannot be empty")
+    
+    return result
+
+def validate_numeric_fields(data: Dict[str, Any], numeric_fields: List[str]) -> ValidationResult:
+    """Validate that specified fields contain numeric values"""
+    result = ValidationResult(valid=True, data=data)
+    
+    for field in numeric_fields:
+        if field in data and data[field] is not None:
+            if not validate_numeric(data[field]):
+                result.add_error(field, f"Field '{field}' must be a numeric value")
+            else:
+                # Convert to float for consistency
+                numeric_value = safe_convert_numeric(data[field])
+                if numeric_value is not None:
+                    data[field] = numeric_value
+                else:
+                    result.add_error(field, f"Failed to convert '{field}' to a numeric value")
+    
+    return result
+
+def validate_range_fields(data: Dict[str, Any], range_constraints: Dict[str, Tuple[float, float]]) -> ValidationResult:
+    """Validate that specified fields are within given ranges"""
+    result = ValidationResult(valid=True, data=data)
+    
+    for field, (min_val, max_val) in range_constraints.items():
+        if field in data and data[field] is not None:
+            value = data[field]
+            if not validate_range(value, min_val, max_val):
+                result.add_error(
+                    field,
+                    f"Field '{field}' must be between {min_val} and {max_val}"
+                )
+    
+    return result
+
+def validate_metric_consistency(data: Dict[str, Any]) -> ValidationResult:
+    """
+    Validate the consistency of metrics
+    Check for contradictory values and logical inconsistencies
+    """
+    result = ValidationResult(valid=True, data=data)
+    
+    # Financial consistency checks
+    if "burn_rate_monthly" in data and "total_funding" in data:
+        burn = safe_convert_numeric(data["burn_rate_monthly"])
+        funding = safe_convert_numeric(data["total_funding"])
+        
+        if burn is not None and funding is not None and burn > 0 and funding > 0:
+            if burn > funding:
+                result.add_error(
+                    "burn_rate_monthly", 
+                    "Monthly burn rate cannot exceed total funding"
+                )
+    
+    # Runway calculation consistency
+    if all(field in data for field in ["runway_months", "burn_rate_monthly", "cash_on_hand"]):
+        runway = safe_convert_numeric(data["runway_months"])
+        burn = safe_convert_numeric(data["burn_rate_monthly"])
+        cash = safe_convert_numeric(data["cash_on_hand"])
+        
+        if all(val is not None for val in [runway, burn, cash]) and burn > 0:
+            calculated_runway = cash / burn
+            if abs(calculated_runway - runway) > 1:  # Allow for 1 month discrepancy
+                result.add_error(
+                    "runway_months", 
+                    f"Runway calculation inconsistent with cash on hand and burn rate"
+                )
+    
+    # Team size and composition consistency
+    if "team_size" in data and "technical_team_size" in data:
+        team_size = safe_convert_numeric(data["team_size"])
+        tech_size = safe_convert_numeric(data["technical_team_size"])
+        
+        if team_size is not None and tech_size is not None:
+            if tech_size > team_size:
+                result.add_error(
+                    "technical_team_size",
+                    "Technical team size cannot exceed total team size"
+                )
+    
+    # Market size consistency
+    if "tam_usd" in data and "sam_usd" in data:
+        tam = safe_convert_numeric(data["tam_usd"])
+        sam = safe_convert_numeric(data["sam_usd"])
+        
+        if tam is not None and sam is not None:
+            if sam > tam:
+                result.add_error(
+                    "sam_usd",
+                    "Serviceable available market (SAM) cannot exceed total addressable market (TAM)"
+                )
+    
+    return result
+
+def sanitize_input(data: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Sanitize input data to prevent injection attacks
+    This is in addition to Pydantic's built-in validation
+    """
+    sanitized = {}
+    
+    for key, value in data.items():
+        if isinstance(value, str):
+            # Basic sanitization for strings (remove control characters, etc.)
+            value = re.sub(r'[\x00-\x1F\x7F]', '', value)
+            # Escape HTML to prevent XSS
+            value = html.escape(value)
+        elif isinstance(value, dict):
+            # Recursively sanitize nested dictionaries
+            value = sanitize_input(value)
+        elif isinstance(value, list):
+            # Sanitize lists
+            sanitized_list = []
+            for item in value:
+                if isinstance(item, dict):
+                    sanitized_list.append(sanitize_input(item))
+                elif isinstance(item, str):
+                    sanitized_list.append(html.escape(re.sub(r'[\x00-\x1F\x7F]', '', item)))
+                else:
+                    sanitized_list.append(item)
+            value = sanitized_list
+        
+        sanitized[key] = value
+    
+    return sanitized
+
+# Required fields for metrics input
+REQUIRED_METRIC_FIELDS = [
+    "startup_id",
+    "funding_stage",
+    "team_size",
+    "burn_rate_monthly",
+    "revenue_monthly",
+    "cash_on_hand"
+]
+
+# Fields that should be numeric
+NUMERIC_METRIC_FIELDS = [
+    "team_size", 
+    "technical_team_size",
+    "burn_rate_monthly", 
+    "revenue_monthly", 
+    "cash_on_hand",
+    "total_funding",
+    "runway_months",
+    "tam_usd",
+    "sam_usd",
+    "market_growth_rate",
+    "customer_acquisition_cost",
+    "customer_lifetime_value"
+]
+
+# Range constraints for fields (min, max)
+RANGE_CONSTRAINTS = {
+    "team_size": (1, 10000),
+    "technical_team_size": (0, 10000),
+    "market_growth_rate": (0, 200),  # percentage
+    "burn_rate_monthly": (0, 1e9),  # up to $1B
+    "revenue_monthly": (0, 1e9),
+    "cash_on_hand": (0, 1e10),
+    "total_funding": (0, 1e10)
+}
+
+def validate_metrics_input(data: Dict[str, Any]) -> ValidationResult:
+    """
+    Validate metrics input data with comprehensive checks
+    Returns ValidationResult with valid flag and errors list
+    """
+    # Map field names from Pydantic model to validation expected names
+    field_mapping = {
+        "team_size_total": "team_size",
+        "monthly_burn_usd": "burn_rate_monthly", 
+        "burn_rate_usd": "burn_rate_monthly",
+        "cash_on_hand_usd": "cash_on_hand",
+    }
+    
+    # Apply field mapping
+    for pydantic_field, validation_field in field_mapping.items():
+        if pydantic_field in data and data[pydantic_field] is not None:
+            data[validation_field] = data[pydantic_field]
+    
+    # Start with required fields validation
+    result = validate_required_fields(data, REQUIRED_METRIC_FIELDS)
+    if not result.valid:
+        return result
+    
+    # Validate numeric fields
+    numeric_result = validate_numeric_fields(data, NUMERIC_METRIC_FIELDS)
+    if not numeric_result.valid:
+        # Copy errors
+        for error in numeric_result.errors:
+            result.add_error(error["field"], error["message"], error["type"])
+        return result
+    else:
+        # Update data with converted numeric values
+        data = numeric_result.data
+    
+    # Validate range constraints
+    range_result = validate_range_fields(data, RANGE_CONSTRAINTS)
+    if not range_result.valid:
+        for error in range_result.errors:
+            result.add_error(error["field"], error["message"], error["type"])
+        return result
+    
+    # Validate metric consistency last
+    consistency_result = validate_metric_consistency(data)
+    if not consistency_result.valid:
+        for error in consistency_result.errors:
+            result.add_error(error["field"], error["message"], error["type"])
+        return result
+    
+    # If all validations pass, return success with validated data
+    return ValidationResult(valid=True, data=data) 

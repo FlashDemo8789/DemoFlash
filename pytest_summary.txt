@@ -1,0 +1,15 @@
+
+==================================== ERRORS ====================================
+____________________ ERROR collecting flashcamp/test_ml.py _____________________
+ImportError while importing test module '/Users/sf/Desktop/FLASH/flashcamp/test_ml.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+../../.pyenv/versions/3.11.7/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+flashcamp/test_ml.py:16: in <module>
+    from flashcamp.backend.app.engines.ml import _load_model, MODEL_PATH
+E   ImportError: cannot import name '_load_model' from 'flashcamp.backend.app.engines.ml' (/Users/sf/Desktop/FLASH/flashcamp/backend/app/engines/ml.py)
+=========================== short test summary info ============================
+ERROR flashcamp/test_ml.py
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+3 warnings, 1 error in 4.58s

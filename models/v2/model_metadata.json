@@ -1,0 +1,182 @@
+{
+  "dataset": "flashcamp/data/gold/seed_dataset_master_final_54000_68.csv",
+  "dataset_size": 54000,
+  "success_rate": 0.276,
+  "feature_count": 60,
+  "pillar_models": {
+    "capital": {
+      "feature_count": 7,
+      "features": [
+        "log_cash_on_hand",
+        "ltv_cac_ratio",
+        "burn_multiple",
+        "runway_est",
+        "gross_margin",
+        "customer_concentration",
+        "post_money_valuation"
+      ],
+      "params": {
+        "lr": 0.054901564893335614,
+        "num_leaves": 20,
+        "max_depth": 7,
+        "min_data_in_leaf": 50,
+        "lambda_l1": 5.152342938013253e-07,
+        "lambda_l2": 0.30215106002161884,
+        "feature_fraction": 0.40776409904579297,
+        "bagging_fraction": 0.8145795192945046,
+        "bagging_freq": 4,
+        "objective": "binary",
+        "metric": "auc",
+        "verbosity": -1,
+        "metrics": {
+          "auc": 0.752692469023773,
+          "accuracy": 0.7636111111111111,
+          "precision": 0.6974169741697417,
+          "recall": 0.2536061724253606,
+          "f1": 0.3719557195571956,
+          "calibration_error": 0.10284844221513759
+        }
+      }
+    },
+    "advantage": {
+      "feature_count": 10,
+      "features": [
+        "patent_count_norm",
+        "network_effect",
+        "has_data_moat",
+        "reg_advantage",
+        "tech_diff_score",
+        "switch_cost_score",
+        "brand_strength",
+        "retention_30d",
+        "retention_90d",
+        "nps_score_norm"
+      ],
+      "params": {
+        "lr": 0.15919731809142965,
+        "num_leaves": 85,
+        "max_depth": 12,
+        "min_data_in_leaf": 72,
+        "lambda_l1": 6.467965385717236,
+        "lambda_l2": 0.004284606485249261,
+        "feature_fraction": 0.8459361662227036,
+        "bagging_fraction": 0.5625222025627555,
+        "bagging_freq": 7,
+        "objective": "binary",
+        "metric": "auc",
+        "verbosity": -1,
+        "metrics": {
+          "auc": 0.5135289411701915,
+          "accuracy": 0.7239814814814814,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "calibration_error": 0.07806161534276355
+        }
+      }
+    },
+    "market": {
+      "feature_count": 7,
+      "features": [
+        "tam_ratio",
+        "sam_ratio",
+        "cagr_pct",
+        "market_growth_pct",
+        "competition_intensity",
+        "competition_hhi",
+        "reg_level_idx"
+      ],
+      "params": {
+        "lr": 0.19382019181996726,
+        "num_leaves": 126,
+        "max_depth": 4,
+        "min_data_in_leaf": 38,
+        "lambda_l1": 3.080800151125856e-05,
+        "lambda_l2": 9.641248952537342e-07,
+        "feature_fraction": 0.9875156504361559,
+        "bagging_fraction": 0.8136450072406702,
+        "bagging_freq": 1,
+        "objective": "binary",
+        "metric": "auc",
+        "verbosity": -1,
+        "metrics": {
+          "auc": 0.5386555058449002,
+          "accuracy": 0.7239814814814814,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "calibration_error": 0.00019125836395211815
+        }
+      }
+    },
+    "people": {
+      "feature_count": 9,
+      "features": [
+        "founders_count_norm",
+        "team_size_norm",
+        "domain_exp_avg",
+        "prior_exits",
+        "board_advisor_score",
+        "team_diversity",
+        "gender_div_idx",
+        "geo_div_idx",
+        "key_person_dependency"
+      ],
+      "params": {
+        "lr": 0.07612489606750311,
+        "num_leaves": 23,
+        "max_depth": 3,
+        "min_data_in_leaf": 54,
+        "lambda_l1": 0.14926182609461894,
+        "lambda_l2": 0.0041288608660140416,
+        "feature_fraction": 0.9969369374633472,
+        "bagging_fraction": 0.5898890885527548,
+        "bagging_freq": 3,
+        "objective": "binary",
+        "metric": "auc",
+        "verbosity": -1,
+        "metrics": {
+          "auc": 0.5346361461614826,
+          "accuracy": 0.7239814814814814,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "calibration_error": 7.179743428592511e-05
+        }
+      }
+    }
+  },
+  "meta_model": {
+    "params": {
+      "learning_rate": 0.09256637697825833,
+      "max_depth": 4,
+      "min_child_weight": 3,
+      "gamma": 1.638897793680675e-05,
+      "subsample": 0.5954045402141401,
+      "colsample_bytree": 0.9431757610860656,
+      "reg_alpha": 1.0930390208506698e-07,
+      "reg_lambda": 0.02532463957469043,
+      "objective": "binary:logistic",
+      "eval_metric": "auc",
+      "verbosity": 0,
+      "random_state": 42,
+      "metrics": {
+        "auc": 0.7507641331107587,
+        "accuracy": 0.7239814814814814,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "calibration_error": 0.19176232428229922
+      }
+    },
+    "metrics": {
+      "auc": 0.7507641331107587,
+      "accuracy": 0.7239814814814814,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "calibration_error": 0.19176232428229922
+    }
+  },
+  "training_date": "2025-05-17T16:20:28.315639"
+}

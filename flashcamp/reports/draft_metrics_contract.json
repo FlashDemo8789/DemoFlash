@@ -1,0 +1,347 @@
+{
+  "startup_id": {
+    "type": "string",
+    "required": true,
+    "description": "startup_id - Has 5000 unique values"
+  },
+  "startup_name": {
+    "type": "string",
+    "required": true,
+    "description": "startup_name - Has 5000 unique values"
+  },
+  "website": {
+    "type": "string",
+    "required": true,
+    "description": "website - Has 5000 unique values"
+  },
+  "sector": {
+    "type": "string",
+    "required": true,
+    "description": "sector - Has 12 unique values"
+  },
+  "subsector": {
+    "type": "string",
+    "required": true,
+    "description": "subsector - Has 10 unique values"
+  },
+  "market_geography": {
+    "type": "string",
+    "required": true,
+    "description": "market_geography - Has 7 unique values"
+  },
+  "country": {
+    "type": "string",
+    "required": true,
+    "description": "country - Has 15 unique values"
+  },
+  "founding_year": {
+    "type": "number",
+    "required": true,
+    "description": "founding_year - Range: 2018.0 to 2024.0"
+  },
+  "funding_stage": {
+    "type": "string",
+    "required": true,
+    "description": "funding_stage - Has 1 unique values"
+  },
+  "total_capital_raised_usd": {
+    "type": "number",
+    "required": true,
+    "description": "total_capital_raised_usd - Range: 145438.8773944445 to 60248770.28182033"
+  },
+  "funding_rounds_count": {
+    "type": "number",
+    "required": true,
+    "description": "funding_rounds_count - Range: 1.0 to 3.0"
+  },
+  "round_valuation_usd": {
+    "type": "number",
+    "required": true,
+    "description": "round_valuation_usd - Range: 4007497.271135183 to 26999749.420210376"
+  },
+  "post_money_valuation_usd": {
+    "type": "number",
+    "required": true,
+    "description": "post_money_valuation_usd - Range: 4728953.9052158175 to 29699724.36223141"
+  },
+  "committed_funding_usd": {
+    "type": "number",
+    "required": true,
+    "description": "committed_funding_usd - Range: 147.9098899776874 to 11343210.802367318"
+  },
+  "cash_on_hand_usd": {
+    "type": "number",
+    "required": true,
+    "description": "cash_on_hand_usd - Range: 200335.0839951743 to 3698665.1215449967"
+  },
+  "monthly_burn_usd": {
+    "type": "number",
+    "required": true,
+    "description": "monthly_burn_usd - Range: 50014.05361349903 to 369986.25326348713"
+  },
+  "burn_stddev_usd": {
+    "type": "number",
+    "required": true,
+    "description": "burn_stddev_usd - Range: 2852.697602842254 to 127587.64574200062"
+  },
+  "annual_revenue_run_rate": {
+    "type": "number",
+    "required": true,
+    "description": "annual_revenue_run_rate - Range: 1428.521484128209 to 3899715.300402895"
+  },
+  "revenue_growth_rate_percent": {
+    "type": "number",
+    "required": true,
+    "description": "revenue_growth_rate_percent - Range: -29.99305239611396 to 379.92890665888586"
+  },
+  "ltv_cac_ratio": {
+    "type": "number",
+    "required": true,
+    "description": "ltv_cac_ratio - Range: 0.4012882821461364 to 5.999405021747326"
+  },
+  "cac_usd": {
+    "type": "number",
+    "required": true,
+    "description": "cac_usd - Range: 401.7061678850448 to 14994.105837083096"
+  },
+  "gross_margin_percent": {
+    "type": "number",
+    "required": true,
+    "description": "gross_margin_percent - Range: 25.007983331810586 to 93.97371327793866"
+  },
+  "customer_churn_rate_percent": {
+    "type": "number",
+    "required": true,
+    "description": "customer_churn_rate_percent - Range: 1.0 to 24.49991285638984"
+  },
+  "has_debt": {
+    "type": "number",
+    "required": true,
+    "description": "has_debt - Range: 0.0 to 1.0"
+  },
+  "investor_tier_primary": {
+    "type": "string",
+    "required": true,
+    "description": "investor_tier_primary - Has 4 unique values"
+  },
+  "customer_concentration_percent": {
+    "type": "number",
+    "required": true,
+    "description": "customer_concentration_percent - Range: 0.0041009662108821 to 71.98736529036181"
+  },
+  "patent_count": {
+    "type": "number",
+    "required": true,
+    "description": "patent_count - Range: 0.0 to 8.0"
+  },
+  "network_effects_present": {
+    "type": "number",
+    "required": true,
+    "description": "network_effects_present - Range: 0.0 to 1.0"
+  },
+  "has_data_moat": {
+    "type": "number",
+    "required": true,
+    "description": "has_data_moat - Range: 0.0 to 1.0"
+  },
+  "regulatory_advantage_present": {
+    "type": "number",
+    "required": true,
+    "description": "regulatory_advantage_present - Range: 0.0 to 1.0"
+  },
+  "scalability_score": {
+    "type": "number",
+    "required": true,
+    "description": "scalability_score - Range: 1.000049384638534 to 4.999747015614904"
+  },
+  "tech_differentiation_score": {
+    "type": "number",
+    "required": true,
+    "description": "tech_differentiation_score - Range: 1.0003041903699392 to 4.999699552280849"
+  },
+  "switching_cost_score": {
+    "type": "number",
+    "required": true,
+    "description": "switching_cost_score - Range: 1.001794666682046 to 4.999645571528179"
+  },
+  "brand_strength_score": {
+    "type": "number",
+    "required": true,
+    "description": "brand_strength_score - Range: 1.0032361623537764 to 4.9987029934785685"
+  },
+  "product_stage": {
+    "type": "string",
+    "required": true,
+    "description": "product_stage - Has 3 unique values"
+  },
+  "customer_count": {
+    "type": "number",
+    "required": true,
+    "description": "customer_count - Range: 1.0 to 3130.0"
+  },
+  "net_dollar_retention_percent": {
+    "type": "number",
+    "required": true,
+    "description": "net_dollar_retention_percent - Range: 50.0 to 228.5473841715896"
+  },
+  "mau": {
+    "type": "number",
+    "required": true,
+    "description": "mau - Range: 2.6266341708644942 to 7472.223144570035"
+  },
+  "product_retention_30d": {
+    "type": "number",
+    "required": true,
+    "description": "product_retention_30d - Range: 0.0500292780737086 to 0.8996903279168458"
+  },
+  "nps_score": {
+    "type": "number",
+    "required": true,
+    "description": "nps_score - Range: -59.96935707234263 to 94.96961459916535"
+  },
+  "tam_size_usd": {
+    "type": "number",
+    "required": true,
+    "description": "tam_size_usd - Range: 106229642.79150496 to 15999054651.869593"
+  },
+  "sam_size_usd": {
+    "type": "number",
+    "required": true,
+    "description": "sam_size_usd - Range: 11933660.527891016 to 7857825291.735383"
+  },
+  "tam_justification": {
+    "type": "string",
+    "required": true,
+    "description": "tam_justification - Has 1 unique values"
+  },
+  "claimed_cagr_pct": {
+    "type": "number",
+    "required": true,
+    "description": "claimed_cagr_pct - Range: 4.013792163183013 to 49.99453990406235"
+  },
+  "market_growth_rate_percent": {
+    "type": "number",
+    "required": true,
+    "description": "market_growth_rate_percent - Range: -11.985687528961432 to 67.99966371450155"
+  },
+  "user_growth_rate_percent": {
+    "type": "number",
+    "required": true,
+    "description": "user_growth_rate_percent - Range: -34.96007679629494 to 379.9078204918566"
+  },
+  "product_retention_90d": {
+    "type": "number",
+    "required": true,
+    "description": "product_retention_90d - Range: 0.020007663451116 to 0.7998308438854334"
+  },
+  "top3_competitor_share_pct": {
+    "type": "number",
+    "required": true,
+    "description": "top3_competitor_share_pct - Range: 0.0500801148038988 to 0.9499952929506248"
+  },
+  "competition_intensity": {
+    "type": "number",
+    "required": true,
+    "description": "competition_intensity - Range: 1.0003722690568586 to 4.999353570431392"
+  },
+  "competitors_named_count": {
+    "type": "number",
+    "required": true,
+    "description": "competitors_named_count - Range: 0.0 to 35.0"
+  },
+  "industry_regulation_level": {
+    "type": "number",
+    "required": true,
+    "description": "industry_regulation_level - Range: 0.0 to 3.0"
+  },
+  "regulation_flags_json": {
+    "type": "string",
+    "required": true,
+    "description": "regulation_flags_json - Has 8 unique values"
+  },
+  "countries_served_json": {
+    "type": "string",
+    "required": true,
+    "description": "countries_served_json - Has 3420 unique values"
+  },
+  "conversion_rate_percent": {
+    "type": "number",
+    "required": true,
+    "description": "conversion_rate_percent - Range: 1.004813441709859 to 24.995860066220395"
+  },
+  "founders_count": {
+    "type": "number",
+    "required": true,
+    "description": "founders_count - Range: 1.0 to 5.0"
+  },
+  "team_size_total": {
+    "type": "number",
+    "required": true,
+    "description": "team_size_total - Range: 5.0 to 200.0"
+  },
+  "team_size_full_time": {
+    "type": "number",
+    "required": true,
+    "description": "team_size_full_time - Range: 3.0 to 195.0"
+  },
+  "founder_domain_experience_years": {
+    "type": "number",
+    "required": true,
+    "description": "founder_domain_experience_years - Range: 0.0 to 18.0"
+  },
+  "prior_startup_experience_count": {
+    "type": "number",
+    "required": true,
+    "description": "prior_startup_experience_count - Range: 0.0 to 3.0"
+  },
+  "prior_successful_exits_count": {
+    "type": "number",
+    "required": true,
+    "description": "prior_successful_exits_count - Range: 0.0 to 3.0"
+  },
+  "board_advisor_experience_score": {
+    "type": "number",
+    "required": true,
+    "description": "board_advisor_experience_score - Range: 7.209254224704864e-06 to 4.999729021638465"
+  },
+  "advisors_count": {
+    "type": "number",
+    "required": true,
+    "description": "advisors_count - Range: 0.0 to 15.0"
+  },
+  "team_diversity_percent": {
+    "type": "number",
+    "required": true,
+    "description": "team_diversity_percent - Range: 0.0125693478262856 to 99.9821567519034"
+  },
+  "gender_diversity_index": {
+    "type": "number",
+    "required": true,
+    "description": "gender_diversity_index - Range: 0.0009095410877201 to 0.999806090109381"
+  },
+  "linkedin_connections_total": {
+    "type": "number",
+    "required": true,
+    "description": "linkedin_connections_total - Range: 3.0 to 34997.0"
+  },
+  "twitter_followers_total": {
+    "type": "number",
+    "required": true,
+    "description": "twitter_followers_total - Range: 11.0 to 219976.0"
+  },
+  "key_person_dependency": {
+    "type": "number",
+    "required": true,
+    "description": "key_person_dependency - Range: 0.0 to 1.0"
+  },
+  "geography_diversity_index": {
+    "type": "number",
+    "required": true,
+    "description": "geography_diversity_index - Range: 4.5599966569054295e-05 to 0.9997167878679808"
+  },
+  "success_label": {
+    "type": "string",
+    "required": true,
+    "description": "success_label - Has 2 unique values"
+  }
+}

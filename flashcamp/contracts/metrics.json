@@ -1,0 +1,796 @@
+[
+  {
+    "name": "startup_name",
+    "pillar": "Info",
+    "label": "Startup Name",
+    "type": "text",
+    "tip": "The official name of the startup being analyzed."
+  },
+  {
+    "name": "sector",
+    "pillar": "Info",
+    "label": "Sector",
+    "type": "select",
+    "options": [
+      "Fintech",
+      "Healthtech",
+      "SaaS",
+      "Marketplace",
+      "Consumer",
+      "Enterprise",
+      "AI/ML",
+      "E-commerce",
+      "Edtech",
+      "Biotech",
+      "Cleantech",
+      "Other"
+    ],
+    "tip": "The primary industry sector in which the startup operates."
+  },
+  {
+    "name": "subsector",
+    "pillar": "Info",
+    "label": "Subsector",
+    "type": "select",
+    "options": [
+      "Payments",
+      "Lending",
+      "Insurance",
+      "Digital Health",
+      "Analytics",
+      "Productivity",
+      "HR Tech",
+      "Logistics",
+      "Real Estate",
+      "Travel",
+      "Gaming",
+      "Other"
+    ],
+    "tip": "A more specific industry category within the main sector."
+  },
+  {
+    "name": "funding_stage",
+    "pillar": "Capital",
+    "label": "Funding Stage",
+    "type": "select",
+    "options": [
+      "Pre-Seed",
+      "Seed",
+      "Series A",
+      "Series B",
+      "Series C",
+      "Growth",
+      "IPO",
+      "Other"
+    ],
+    "tip": "Current stage of funding (e.g., Seed, Series A, Series B, etc.)."
+  },
+  {
+    "name": "market_geography",
+    "pillar": "Market",
+    "label": "Market Geography",
+    "type": "list",
+    "tip": "The geographic regions or countries the startup targets or serves."
+  },
+  {
+    "name": "country",
+    "pillar": "Market",
+    "label": "Country",
+    "type": "text",
+    "tip": "The country where the startup is headquartered or primarily operates."
+  },
+  {
+    "name": "website",
+    "pillar": "Info",
+    "label": "Website",
+    "type": "text",
+    "tip": "The official website URL for the startup."
+  },
+  {
+    "name": "founding_year",
+    "pillar": "People",
+    "label": "Founding Year",
+    "type": "number",
+    "tip": "The year the startup was founded."
+  },
+  {
+    "name": "industry",
+    "pillar": "Market",
+    "label": "Industry",
+    "type": "text",
+    "tip": "The specific industry vertical relevant to the startup's product or service."
+  },
+  {
+    "name": "has_data_moat",
+    "pillar": "Advantage",
+    "label": "Has Data Moat",
+    "type": "checkbox",
+    "tip": "Indicates if the startup has proprietary data that creates a defensible competitive advantage."
+  },
+  {
+    "name": "prior_startup_experience_count",
+    "pillar": "People",
+    "label": "Prior Startup Experience Count",
+    "type": "number",
+    "tip": "Number of previous startups founded by the current founding team."
+  },
+  {
+    "name": "runway_months",
+    "pillar": "Capital",
+    "label": "Runway (Months)",
+    "type": "number",
+    "tip": "The number of months the startup can operate at current burn rate before needing new funding."
+  },
+  {
+    "name": "tam_size_usd",
+    "pillar": "Market",
+    "label": "TAM Size (USD)",
+    "type": "number",
+    "tip": "Total Addressable Market size, representing the maximum revenue opportunity in USD."
+  },
+  {
+    "name": "regulatory_risk_score",
+    "pillar": "Market",
+    "label": "Regulatory Risk Score",
+    "type": "number",
+    "tip": "A score indicating the level of regulatory risk faced by the startup in its market."
+  },
+  {
+    "name": "market_growth_rate_percent",
+    "pillar": "Market",
+    "label": "Market Growth Rate (%)",
+    "type": "number",
+    "tip": "Annual growth rate of the startup's target market, expressed as a percentage."
+  },
+  {
+    "name": "conversion_rate_percent",
+    "pillar": "Market",
+    "label": "Conversion Rate (%)",
+    "type": "number",
+    "tip": "Percentage of leads or users that convert to paying customers."
+  },
+  {
+    "name": "board_advisor_experience_score",
+    "pillar": "People",
+    "label": "Board Advisor Experience Score",
+    "type": "number",
+    "tip": "A quantitative assessment of the experience and value-add of the startup's board and advisors."
+  },
+  {
+    "name": "tech_differentiation_score",
+    "pillar": "Advantage",
+    "label": "Tech Differentiation Score",
+    "type": "number",
+    "tip": "A score reflecting how unique and defensible the startup's technology is compared to competitors."
+  },
+  {
+    "name": "regulatory_advantage_present",
+    "pillar": "Advantage",
+    "label": "Regulatory Advantage Present",
+    "type": "checkbox",
+    "tip": "Indicates if the startup benefits from favorable regulatory conditions or barriers."
+  },
+  {
+    "name": "scalability_score",
+    "pillar": "Advantage",
+    "label": "Scalability Score",
+    "type": "number",
+    "tip": "A score reflecting the startup's ability to scale operations efficiently."
+  },
+  {
+    "name": "cac_payback_months",
+    "pillar": "Capital",
+    "label": "CAC Payback (Months)",
+    "type": "number",
+    "tip": "The number of months it takes to recover the cost of acquiring a customer (Customer Acquisition Cost)."
+  },
+  {
+    "name": "viral_coefficient",
+    "pillar": "Advantage",
+    "label": "Viral Coefficient",
+    "type": "number",
+    "tip": "The number of new users generated by each existing user, indicating organic growth potential."
+  },
+  {
+    "name": "cash_on_hand_usd",
+    "pillar": "Capital",
+    "label": "Cash on Hand (USD)",
+    "type": "number",
+    "tip": "The amount of cash and cash equivalents currently held by the startup."
+  },
+  {
+    "name": "brand_strength_score",
+    "pillar": "Advantage",
+    "label": "Brand Strength Score",
+    "type": "number",
+    "tip": "A score indicating the perceived strength and recognition of the startup's brand."
+  },
+  {
+    "name": "distribution_partner_count",
+    "pillar": "Market",
+    "label": "Distribution Partner Count",
+    "type": "number",
+    "tip": "Number of partners or channels used to distribute the startup's product or service."
+  },
+  {
+    "name": "ltv_cac_ratio",
+    "pillar": "Capital",
+    "label": "LTV/CAC Ratio",
+    "type": "number",
+    "tip": "The ratio of customer Lifetime Value (LTV) to Customer Acquisition Cost (CAC), indicating unit economics."
+  },
+  {
+    "name": "sales_cycle_length_days",
+    "pillar": "Capital",
+    "label": "Sales Cycle (Days)",
+    "type": "number",
+    "tip": "The average number of days it takes to close a sale from initial contact to deal completion."
+  },
+  {
+    "name": "team_size_total",
+    "pillar": "People",
+    "label": "Team Size (Total)",
+    "type": "number",
+    "tip": "Total number of employees (full-time and part-time) at the startup."
+  },
+  {
+    "name": "founder_domain_experience_years",
+    "pillar": "People",
+    "label": "Founder Domain Experience (Years)",
+    "type": "number",
+    "tip": "Years of relevant industry/domain experience held by the founders."
+  },
+  {
+    "name": "has_debt",
+    "pillar": "Capital",
+    "label": "Has Debt",
+    "type": "checkbox",
+    "tip": "Indicates whether the startup currently has any outstanding debt obligations."
+  },
+  {
+    "name": "debt_ratio",
+    "pillar": "Capital",
+    "label": "Debt Ratio",
+    "type": "number",
+    "tip": "The ratio of total debt to total assets, reflecting leverage."
+  },
+  {
+    "name": "team_diversity_percent",
+    "pillar": "People",
+    "label": "Team Diversity (%)",
+    "type": "number",
+    "tip": "Percentage of team members from diverse backgrounds (gender, ethnicity, etc.)."
+  },
+  {
+    "name": "current_mrr",
+    "pillar": "Capital",
+    "label": "Current MRR",
+    "type": "number",
+    "tip": "Current Monthly Recurring Revenue (MRR) generated by the startup."
+  },
+  {
+    "name": "team_engagement_score",
+    "pillar": "People",
+    "label": "Team Engagement Score",
+    "type": "number",
+    "tip": "A score indicating how engaged and motivated the team is (e.g., based on surveys or KPIs)."
+  },
+  {
+    "name": "customer_churn_rate_percent",
+    "pillar": "Capital",
+    "label": "Customer Churn Rate (%)",
+    "type": "number",
+    "tip": "Percentage of customers lost over a specific period. High churn can signal product or market issues."
+  },
+  {
+    "name": "net_profit_margin_percent",
+    "pillar": "Capital",
+    "label": "Net Profit Margin (%)",
+    "type": "number",
+    "tip": "Net profit as a percentage of total revenue, indicating profitability."
+  },
+  {
+    "name": "founding_team_size",
+    "pillar": "People",
+    "label": "Founding Team Size",
+    "type": "number",
+    "tip": "Number of individuals in the original founding team."
+  },
+  {
+    "name": "gross_margin_percent",
+    "pillar": "Capital",
+    "label": "Gross Margin (%)",
+    "type": "number",
+    "tip": "Gross profit as a percentage of revenue, reflecting core business efficiency."
+  },
+  {
+    "name": "sam_size_usd",
+    "pillar": "Market",
+    "label": "SAM Size (USD)",
+    "type": "number",
+    "tip": "Serviceable Available Market size, representing the portion of TAM targeted by the startup's products/services."
+  },
+  {
+    "name": "product_stage",
+    "pillar": "Advantage",
+    "label": "Product Stage",
+    "type": "text",
+    "tip": "The current development stage of the product (e.g., MVP, Beta, Launched)."
+  },
+  {
+    "name": "burn_multiple",
+    "pillar": "Capital",
+    "label": "Burn Multiple",
+    "type": "number",
+    "tip": "A ratio of net cash burned to net new ARR (Annual Recurring Revenue) added. Lower is better."
+  },
+  {
+    "name": "data_source",
+    "pillar": "Info",
+    "label": "Data Source",
+    "type": "text",
+    "tip": "The origin or provider of the data used for analysis."
+  },
+  {
+    "name": "total_capital_raised_usd",
+    "pillar": "Capital",
+    "label": "Total Capital Raised (USD)",
+    "type": "number",
+    "tip": "Total amount of capital raised by the startup to date, in USD."
+  },
+  {
+    "name": "user_growth_rate_percent",
+    "pillar": "Market",
+    "label": "User Growth Rate (%)",
+    "type": "number",
+    "tip": "The rate at which the user base is growing, expressed as a percentage."
+  },
+  {
+    "name": "nps_score",
+    "pillar": "Market",
+    "label": "NPS Score",
+    "type": "number",
+    "tip": "Net Promoter Score (NPS) is a customer loyalty and satisfaction measurement taken from asking customers how likely they are to recommend your product or service to others."
+  },
+  {
+    "name": "complementary_skills_index",
+    "pillar": "People",
+    "label": "Complementary Skills Index",
+    "type": "number",
+    "tip": "A quantitative measure of how well the founding team\u2019s skills complement each other (e.g., technical, business, product, sales)."
+  },
+  {
+    "name": "revenue_growth_rate",
+    "pillar": "Capital",
+    "label": "Revenue Growth Rate",
+    "type": "number",
+    "tip": "The percentage rate at which the startup\u2019s revenue is increasing month-over-month or year-over-year."
+  },
+  {
+    "name": "employee_turnover_rate_percent",
+    "pillar": "People",
+    "label": "Employee Turnover Rate (%)",
+    "type": "number",
+    "tip": "The percentage of employees who leave the company over a specific period, indicating retention and culture health."
+  },
+  {
+    "name": "competition_intensity",
+    "pillar": "Market",
+    "label": "Competition Intensity",
+    "type": "number",
+    "tip": "A measure of how many competitors are in the space and the intensity of competition the startup faces."
+  },
+  {
+    "name": "network_effects_present",
+    "pillar": "Advantage",
+    "label": "Network Effects Present",
+    "type": "checkbox",
+    "tip": "Indicates whether the product or service benefits from network effects (i.e., becomes more valuable as more people use it)."
+  },
+  {
+    "name": "market_adoption_stage",
+    "pillar": "Market",
+    "label": "Market Adoption Stage",
+    "type": "text",
+    "tip": "The stage at which the target market is in adopting the product (e.g., Early Adopters, Early Majority, Late Majority)."
+  },
+  {
+    "name": "switching_cost_score",
+    "pillar": "Advantage",
+    "label": "Switching Cost Score",
+    "type": "number",
+    "tip": "A score (e.g., 1-10) reflecting how difficult it is for customers to switch to a competitor\u2019s product or service."
+  },
+  {
+    "name": "key_person_dependency",
+    "pillar": "Advantage",
+    "label": "Key Person Dependency",
+    "type": "number",
+    "tip": "A measure of how dependent the business is on a single key individual (founder, CTO, etc.). High dependency is a risk."
+  },
+  {
+    "name": "patent_count",
+    "pillar": "Advantage",
+    "label": "Patent Count",
+    "type": "number",
+    "tip": "The number of patents granted or pending that are owned by the startup."
+  },
+  {
+    "name": "product_uptime_percent",
+    "pillar": "Advantage",
+    "label": "Product Uptime (%)",
+    "type": "number",
+    "tip": "The percentage of time the product or service is operational and available to customers."
+  },
+  {
+    "name": "security_compliance",
+    "pillar": "Advantage",
+    "label": "Security Compliance",
+    "type": "text",
+    "tip": "A description of the startup\u2019s compliance with security standards and certifications (e.g., SOC 2, ISO 27001)."
+  },
+  {
+    "name": "customer_concentration_percent",
+    "pillar": "Capital",
+    "label": "Customer Concentration (%)",
+    "type": "number",
+    "tip": "The percentage of revenue coming from the largest customer(s). High concentration can indicate risk."
+  },
+  {
+    "name": "prior_successful_exits_count",
+    "pillar": "People",
+    "label": "Prior Successful Exits Count",
+    "type": "number",
+    "tip": "Number of successful startup exits (acquisitions or IPOs) achieved by the founding team."
+  },
+  {
+    "name": "annual_revenue_run_rate",
+    "pillar": "Capital",
+    "label": "Annual Revenue Run Rate",
+    "type": "number",
+    "tip": "Projected annual revenue based on current monthly or quarterly figures."
+  },
+  {
+    "name": "burn_rate_usd",
+    "pillar": "Capital",
+    "label": "Burn Rate (USD)",
+    "type": "number",
+    "tip": "The amount of money the startup is spending (net loss) per month."
+  },
+  {
+    "name": "waitlist_size",
+    "pillar": "Market",
+    "label": "Waitlist Size",
+    "type": "number",
+    "tip": "Number of users or customers on a waitlist for the product or service."
+  },
+  {
+    "name": "has_network_effect",
+    "pillar": "Advantage",
+    "label": "Has Network Effect",
+    "type": "checkbox",
+    "tip": "Indicates if the startup\u2019s product or business model benefits from network effects."
+  },
+  {
+    "name": "switching_cost",
+    "pillar": "Advantage",
+    "label": "Switching Cost",
+    "type": "text",
+    "tip": "A description of the costs or barriers a customer faces when switching to a competitor."
+  },
+  {
+    "name": "product_retention_30d",
+    "pillar": "Market",
+    "label": "30-Day Retention (%)",
+    "type": "number",
+    "tip": "The percentage of users who remain active 30 days after signup."
+  },
+  {
+    "name": "product_retention_90d",
+    "pillar": "Market",
+    "label": "90-Day Retention (%)",
+    "type": "number",
+    "tip": "The percentage of users who remain active 90 days after signup."
+  },
+  {
+    "name": "mau",
+    "pillar": "Market",
+    "label": "Monthly Active Users",
+    "type": "number",
+    "tip": "The total number of unique users who engage with the product or service in a given month."
+  },
+  {
+    "name": "nps",
+    "pillar": "Market",
+    "label": "NPS",
+    "type": "number",
+    "tip": "Net Promoter Score (NPS) is a customer loyalty and satisfaction metric based on customer survey responses."
+  },
+  {
+    "name": "moat_barriers",
+    "pillar": "Advantage",
+    "label": "Moat Barriers",
+    "type": "list",
+    "tip": "Types of barriers that protect the startup\u2019s business model (e.g., patents, network effects, regulatory, brand)."
+  },
+  {
+    "name": "linkedin_connections_total",
+    "pillar": "People",
+    "label": "LinkedIn Connections",
+    "type": "number",
+    "tip": "Total number of LinkedIn connections among the founding team, indicating professional network reach."
+  },
+  {
+    "name": "twitter_followers_total",
+    "pillar": "People",
+    "label": "Twitter Followers",
+    "type": "number",
+    "tip": "Total number of Twitter followers for the startup or founders, indicating social media influence."
+  },
+  {
+    "name": "domain_expertise_years_avg",
+    "pillar": "People",
+    "label": "Domain Expertise (Years)",
+    "type": "number",
+    "tip": "Average years of relevant industry/domain expertise among the founding team."
+  },
+  {
+    "name": "gender_diversity_index",
+    "pillar": "People",
+    "label": "Gender Diversity Index",
+    "type": "number",
+    "tip": "A composite index measuring gender diversity within the team (e.g., 0 = no diversity, 1 = fully balanced)."
+  },
+  {
+    "name": "geography_diversity_index",
+    "pillar": "People",
+    "label": "Geography Diversity Index",
+    "type": "number",
+    "tip": "A composite index measuring the geographic diversity of the team."
+  },
+  {
+    "name": "founders_count",
+    "pillar": "People",
+    "label": "Founders Count",
+    "type": "number",
+    "tip": "Total number of founders in the startup."
+  },
+  {
+    "name": "previous_exits_count",
+    "pillar": "People",
+    "label": "Previous Exits Count",
+    "type": "number",
+    "tip": "Number of previous successful exits by the founding team."
+  },
+  {
+    "name": "patents_count",
+    "pillar": "Advantage",
+    "label": "Patents Count",
+    "type": "number",
+    "tip": "Total number of patents held by the startup."
+  },
+  {
+    "name": "has_patents",
+    "pillar": "Advantage",
+    "label": "Has Patents",
+    "type": "checkbox",
+    "tip": "Indicates if the startup owns any patents."
+  },
+  {
+    "name": "monthly_burn_usd",
+    "pillar": "Capital",
+    "label": "Monthly Burn (USD)",
+    "type": "number",
+    "tip": "The amount of cash the startup spends per month."
+  },
+  {
+    "name": "total_funding_usd",
+    "pillar": "Capital",
+    "label": "Total Funding (USD)",
+    "type": "number",
+    "tip": "Total amount of funding the startup has raised to date."
+  },
+  {
+    "name": "revenue_annual_usd",
+    "pillar": "Capital",
+    "label": "Annual Revenue (USD)",
+    "type": "number",
+    "tip": "The startup's total revenue in the most recent fiscal year."
+  },
+  {
+    "name": "ltv_usd",
+    "pillar": "Capital",
+    "label": "Lifetime Value (USD)",
+    "type": "number",
+    "tip": "The average total revenue expected from a customer over their relationship with the startup."
+  },
+  {
+    "name": "regulation_flags",
+    "pillar": "Market",
+    "label": "Regulation Flags",
+    "type": "list",
+    "tip": "Key regulatory requirements or risks relevant to the startup's market."
+  },
+  {
+    "name": "top3_competitor_share_pct",
+    "pillar": "Market",
+    "label": "Top-3 Competitor Share (%)",
+    "type": "number",
+    "tip": "Percentage of market share held by the top three competitors."
+  },
+  {
+    "name": "roles_present",
+    "pillar": "People",
+    "label": "Roles Present",
+    "type": "list",
+    "tip": "Key roles present in the startup's team (e.g., CEO, CTO, CMO)."
+  },
+  {
+    "name": "competitors_named_count",
+    "pillar": "Market",
+    "label": "Competitors Named Count",
+    "type": "number",
+    "tip": "Number of direct competitors identified by name."
+  },
+  {
+    "name": "tam_justification",
+    "pillar": "Market",
+    "label": "TAM Justification",
+    "type": "text",
+    "tip": "Explanation or evidence supporting the TAM estimate."
+  },
+  {
+    "name": "industry_regulation_level",
+    "pillar": "Market",
+    "label": "Industry Regulation Level",
+    "type": "text",
+    "tip": "The degree of regulatory oversight in the startup's industry."
+  },
+  {
+    "name": "claimed_tam_usd",
+    "pillar": "Market",
+    "label": "Claimed TAM (USD)",
+    "type": "number",
+    "tip": "The startup's stated estimate of their Total Addressable Market."
+  },
+  {
+    "name": "claimed_cagr_pct",
+    "pillar": "Market",
+    "label": "Claimed CAGR (%)",
+    "type": "number",
+    "tip": "Compound Annual Growth Rate claimed by the startup for their market."
+  },
+  {
+    "name": "burn_stddev_usd",
+    "pillar": "Capital",
+    "label": "Burn StdDev (USD)",
+    "type": "number",
+    "tip": "Standard deviation of monthly burn, indicating volatility in cash outflows."
+  },
+  {
+    "name": "funding_rounds_count",
+    "pillar": "Capital",
+    "label": "Funding Rounds Count",
+    "type": "number",
+    "tip": "Total number of funding rounds completed by the startup."
+  },
+  {
+    "name": "committed_funding_usd",
+    "pillar": "Capital",
+    "label": "Committed Funding (USD)",
+    "type": "number",
+    "tip": "Funding that has been committed but not yet received."
+  },
+  {
+    "name": "years_experience_avg",
+    "pillar": "People",
+    "label": "Avg Years Experience",
+    "type": "number",
+    "tip": "Average years of professional experience among team members."
+  },
+  {
+    "name": "team_size_full_time",
+    "pillar": "People",
+    "label": "Team Size (Full-Time)",
+    "type": "number",
+    "tip": "Number of full-time employees at the startup."
+  },
+  {
+    "name": "degree_level_mode",
+    "pillar": "People",
+    "label": "Degree Level Mode",
+    "type": "text",
+    "tip": "The most common degree level among team members (e.g., Bachelor's, Master's, PhD)."
+  },
+  {
+    "name": "cac_usd",
+    "pillar": "Capital",
+    "label": "CAC (USD)",
+    "type": "number",
+    "tip": "Customer Acquisition Cost \u2014 the average cost to acquire a new customer."
+  },
+  {
+    "name": "previous_exit_max_value_usd",
+    "pillar": "People",
+    "label": "Prev Exit Max Value (USD)",
+    "type": "number",
+    "tip": "The highest exit value achieved by any founder in previous ventures."
+  },
+  {
+    "name": "startup_id",
+    "pillar": "Info",
+    "label": "Startup Id",
+    "type": "text",
+    "tip": "Data for startup id"
+  },
+  {
+    "name": "success_label",
+    "pillar": "Info",
+    "label": "Success Label",
+    "type": "text",
+    "tip": "Data for success label"
+  },
+  {
+    "name": "round_valuation_usd",
+    "pillar": "Info",
+    "label": "Round Valuation Usd",
+    "type": "number",
+    "tip": "Data for round valuation usd"
+  },
+  {
+    "name": "post_money_valuation_usd",
+    "pillar": "Info",
+    "label": "Post Money Valuation Usd",
+    "type": "number",
+    "tip": "Data for post money valuation usd"
+  },
+  {
+    "name": "revenue_growth_rate_percent",
+    "pillar": "Info",
+    "label": "Revenue Growth Rate Percent",
+    "type": "number",
+    "tip": "Data for revenue growth rate percent"
+  },
+  {
+    "name": "investor_tier_primary",
+    "pillar": "Info",
+    "label": "Investor Tier Primary",
+    "type": "text",
+    "tip": "Data for investor tier primary"
+  },
+  {
+    "name": "customer_count",
+    "pillar": "Info",
+    "label": "Customer Count",
+    "type": "number",
+    "tip": "Data for customer count"
+  },
+  {
+    "name": "net_dollar_retention_percent",
+    "pillar": "Info",
+    "label": "Net Dollar Retention Percent",
+    "type": "number",
+    "tip": "Data for net dollar retention percent"
+  },
+  {
+    "name": "regulation_flags_json",
+    "pillar": "Info",
+    "label": "Regulation Flags Json",
+    "type": "text",
+    "tip": "Data for regulation flags json"
+  },
+  {
+    "name": "countries_served_json",
+    "pillar": "Info",
+    "label": "Countries Served Json",
+    "type": "number",
+    "tip": "Data for countries served json"
+  },
+  {
+    "name": "advisors_count",
+    "pillar": "Info",
+    "label": "Advisors Count",
+    "type": "number",
+    "tip": "Data for advisors count"
+  }
+]

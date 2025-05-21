@@ -1,0 +1,425 @@
+{
+  "founding_year": {
+    "type": "integer",
+    "required": false,
+    "description": "Founding year (fallback if start_date absent)",
+    "example": 2024
+  },
+  "has_data_moat": {
+    "type": "boolean",
+    "required": false,
+    "description": "Proprietary data advantage?",
+    "example": true
+  },
+  "prior_startup_experience_count": {
+    "type": "integer",
+    "required": false,
+    "description": "Number of previous startups founded",
+    "example": 1
+  },
+  "runway_months": {
+    "type": "integer",
+    "required": true,
+    "description": "Cash / burn (months)",
+    "example": 12
+  },
+  "tam_size_usd": {
+    "type": "currency",
+    "required": false,
+    "description": "Total Addressable Market size in USD",
+    "example": 8200000000
+  },
+  "regulatory_risk_score": {
+    "type": "number",
+    "required": false,
+    "description": "1=low \u2026 10=high compliance risk",
+    "example": 4
+  },
+  "market_growth_rate_percent": {
+    "type": "number",
+    "required": true,
+    "description": "CAGR of addressable market (%)",
+    "example": 18.5
+  },
+  "conversion_rate_percent": {
+    "type": "number",
+    "required": false,
+    "description": "Visitor \u2192 paying customer (%)",
+    "example": 7.2
+  },
+  "board_advisor_experience_score": {
+    "type": "number",
+    "required": false,
+    "description": "Aggregate 0-10 board/advisor experience score",
+    "example": 6.5
+  },
+  "tech_differentiation_score": {
+    "type": "number",
+    "required": false,
+    "description": "Unique tech moat 0-10",
+    "example": 8.0
+  },
+  "regulatory_advantage_present": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: regulatory_advantage_present"
+  },
+  "scalability_score": {
+    "type": "number",
+    "required": false,
+    "description": "Ops scalability 0-10",
+    "example": 7
+  },
+  "cac_payback_months": {
+    "type": "number",
+    "required": false,
+    "description": "Months to recover CAC",
+    "example": 14
+  },
+  "viral_coefficient": {
+    "type": "number",
+    "required": false,
+    "description": "Referral virality (k-factor)",
+    "example": 0.8
+  },
+  "cash_on_hand_usd": {
+    "type": "currency",
+    "required": true,
+    "description": "Current bank balance + equivalents",
+    "example": 540000
+  },
+  "brand_strength_score": {
+    "type": "number",
+    "required": false,
+    "description": "Survey-based 0-100 brand metric",
+    "example": 65
+  },
+  "distribution_partner_count": {
+    "type": "integer",
+    "required": false,
+    "description": "Signed distributors/resellers",
+    "example": 3
+  },
+  "ltv_cac_ratio": {
+    "type": "number",
+    "required": false,
+    "description": "Lifetime value / CAC ratio",
+    "example": 3.2
+  },
+  "sales_cycle_length_days": {
+    "type": "integer",
+    "required": false,
+    "description": "Avg days from lead \u2192 close",
+    "example": 52
+  },
+  "team_size_total": {
+    "type": "integer",
+    "required": false,
+    "description": "Total head-count (inc. contractors, interns)",
+    "example": 18
+  },
+  "founder_domain_experience_years": {
+    "type": "integer",
+    "required": true,
+    "description": "Years founders worked in domain",
+    "example": 7
+  },
+  "has_debt": {
+    "type": "boolean",
+    "required": false,
+    "description": "Any outstanding debt?",
+    "example": false
+  },
+  "debt_ratio": {
+    "type": "number",
+    "required": false,
+    "description": "Liabilities / Assets (0\u20131)",
+    "example": 0.22
+  },
+  "team_diversity_percent": {
+    "type": "number",
+    "required": false,
+    "description": "% of team not matching majority demographic",
+    "example": 42
+  },
+  "current_mrr": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: current_mrr"
+  },
+  "team_engagement_score": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: team_engagement_score"
+  },
+  "customer_churn_rate_percent": {
+    "type": "number",
+    "required": false,
+    "description": "Monthly logo-churn (%)",
+    "example": 4.5
+  },
+  "net_profit_margin_percent": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: net_profit_margin_percent"
+  },
+  "founding_team_size": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: founding_team_size"
+  },
+  "gross_margin_percent": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: gross_margin_percent"
+  },
+  "sam_size_usd": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: sam_size_usd"
+  },
+  "burn_multiple": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: burn_multiple"
+  },
+  "total_capital_raised_usd": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: total_capital_raised_usd"
+  },
+  "user_growth_rate_percent": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: user_growth_rate_percent"
+  },
+  "nps_score": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: nps_score"
+  },
+  "complementary_skills_index": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: complementary_skills_index"
+  },
+  "revenue_growth_rate": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: revenue_growth_rate"
+  },
+  "employee_turnover_rate_percent": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: employee_turnover_rate_percent"
+  },
+  "competition_intensity": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: competition_intensity"
+  },
+  "network_effects_present": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: network_effects_present"
+  },
+  "switching_cost_score": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: switching_cost_score"
+  },
+  "key_person_dependency": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: key_person_dependency"
+  },
+  "patent_count": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: patent_count"
+  },
+  "product_uptime_percent": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: product_uptime_percent"
+  },
+  "customer_concentration_percent": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: customer_concentration_percent"
+  },
+  "success_label": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: success_label"
+  },
+  "prior_successful_exits_count": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: prior_successful_exits_count"
+  },
+  "annual_revenue_run_rate": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: annual_revenue_run_rate"
+  },
+  "burn_rate_usd": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: burn_rate_usd"
+  },
+  "waitlist_size": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: waitlist_size"
+  },
+  "has_network_effect": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: has_network_effect"
+  },
+  "product_retention_30d": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: product_retention_30d"
+  },
+  "product_retention_90d": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: product_retention_90d"
+  },
+  "mau": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: mau"
+  },
+  "nps": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: nps"
+  },
+  "linkedin_connections_total": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: linkedin_connections_total"
+  },
+  "twitter_followers_total": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: twitter_followers_total"
+  },
+  "domain_expertise_years_avg": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: domain_expertise_years_avg"
+  },
+  "gender_diversity_index": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: gender_diversity_index"
+  },
+  "geography_diversity_index": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: geography_diversity_index"
+  },
+  "founders_count": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: founders_count"
+  },
+  "previous_exits_count": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: previous_exits_count"
+  },
+  "patents_count": {
+    "type": "integer",
+    "required": false,
+    "description": "Granted patents",
+    "example": 2
+  },
+  "has_patents": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: has_patents"
+  },
+  "monthly_burn_usd": {
+    "type": "currency",
+    "required": true,
+    "description": "Cash expenses per month",
+    "example": 45000
+  },
+  "total_funding_usd": {
+    "type": "currency",
+    "required": false,
+    "description": "All equity + debt raised to date",
+    "example": 2500000
+  },
+  "revenue_annual_usd": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: revenue_annual_usd"
+  },
+  "ltv_usd": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: ltv_usd"
+  },
+  "top3_competitor_share_pct": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: top3_competitor_share_pct"
+  },
+  "competitors_named_count": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: competitors_named_count"
+  },
+  "claimed_tam_usd": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: claimed_tam_usd"
+  },
+  "claimed_cagr_pct": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: claimed_cagr_pct"
+  },
+  "burn_stddev_usd": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: burn_stddev_usd"
+  },
+  "funding_rounds_count": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: funding_rounds_count"
+  },
+  "committed_funding_usd": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: committed_funding_usd"
+  },
+  "years_experience_avg": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: years_experience_avg"
+  },
+  "team_size_full_time": {
+    "type": "integer",
+    "required": true,
+    "description": "Number of full-time employees",
+    "example": 12
+  },
+  "cac_usd": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: cac_usd"
+  },
+  "previous_exit_max_value_usd": {
+    "type": "number",
+    "required": false,
+    "description": "Model feature: previous_exit_max_value_usd"
+  }
+}

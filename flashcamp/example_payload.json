@@ -1,0 +1,9 @@
+{
+    "startup_id": "acme-corp-123",
+    "funding_stage": "Series A",
+    "team_size": 15,
+    "technical_team_size": 8,
+    "burn_rate_monthly": 80000,
+    "revenue_monthly": 25000,
+    "cash_on_hand": 800000
+} 
