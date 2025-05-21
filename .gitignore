@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pkl
+.cache/
+
+# Virtual environment
+.venv/
+flashcamp/.venv/
+
+# Node.js
+/frontend/node_modules/
+
+# OS/system
+.DS_Store
